@@ -5,8 +5,9 @@ vim.g.do_filetype_lua = 1
 vim.g.mapleader = "ö"
 vim.g.maplocalleader = "ö"
 
-vim.opt.shellcmdflag = "-c"
+vim.opt.shell = "C:/msys64/usr/bin/fish.exe"
 vim.opt.shellxquote = ''
+vim.opt.shellcmdflag = "-c"
 vim.opt.termguicolors = true
 
 vim.wo.relativenumber = true
