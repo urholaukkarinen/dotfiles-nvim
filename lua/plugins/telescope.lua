@@ -22,8 +22,6 @@ return {
 				no_ignore = false,
 				show_preview = true,
 			})
-
-			require("telescope").load_extension("dir")
 		end,
 	},
 }
