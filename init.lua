@@ -13,9 +13,10 @@ vim.opt.termguicolors = true
 vim.wo.relativenumber = true
 vim.wo.number = true
 
-vim.bo.tabstop = 4
-vim.bo.shiftwidth = 4
-vim.bo.autoindent = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.autoindent = true
 
 require("bootstrap")
 
@@ -24,3 +25,6 @@ vim.cmd("autocmd BufEnter * silent! if !exists('g:init_cd') | let g:init_cd = 1 
 
 vim.keymap.set('v', '<leader>r', '"zy:%s/<c-r>z//g<Left><Left>', { noremap = true })
 vim.keymap.set('n', '<leader>r', '"zyiw:%s/<c-r>z//g<Left><Left>', { noremap = true })
+vim.keymap.set('n', 'd', '"_d', { noremap = true })
+vim.keymap.set('v', 'x', '"_x', { noremap = true })
+vim.keymap.set('v', 'p', '"_dP', { noremap = true })

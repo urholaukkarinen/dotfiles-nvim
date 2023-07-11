@@ -13,15 +13,4 @@ return {
 			vim.keymap.set('n', '<leader>h', builtin.help_tags, default_opts)
 		end,
 	},
-	{
-		"princejoogie/dir-telescope.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("dir-telescope").setup({
-				hidden = true,
-				no_ignore = false,
-				show_preview = true,
-			})
-		end,
-	},
 }
