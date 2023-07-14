@@ -21,5 +21,14 @@ return {
 			vim.cmd('colorscheme onedark')
 			vim.g.airline_theme = "onedark"
 		end,
-	}
+	},
+    {
+        "briones-gabriel/darcula-solid.nvim",
+        dependencies = { "rktjmp/lush.nvim" },
+        enabled = false,
+        name = "darcula-solid",
+        config = function()
+			vim.cmd('colorscheme darcula-solid')
+        end,
+    }
 }

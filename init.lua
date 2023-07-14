@@ -18,13 +18,25 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
+vim.opt.signcolumn = "yes"
+
 require("bootstrap")
 
 vim.cmd("autocmd BufEnter * silent! if !exists('g:init_cd') | let g:init_cd = 1 | lcd %:p:h | endif")
+vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 
+-- Search & Replace
+vim.keymap.set('v', '<leader>r', '"zy:%s/<c-r>z//g<Left><Left>')
+vim.keymap.set('n', '<leader>r', '"zyiw:%s/<c-r>z//g<Left><Left>')
 
-vim.keymap.set('v', '<leader>r', '"zy:%s/<c-r>z//g<Left><Left>', { noremap = true })
-vim.keymap.set('n', '<leader>r', '"zyiw:%s/<c-r>z//g<Left><Left>', { noremap = true })
-vim.keymap.set('n', 'd', '"_d', { noremap = true })
-vim.keymap.set('v', 'x', '"_x', { noremap = true })
-vim.keymap.set('v', 'p', '"_dP', { noremap = true })
+-- Yank changes
+vim.keymap.set('n', 'd', '"_d')
+vim.keymap.set('v', 'x', '"_x')
+vim.keymap.set('v', 'p', '"_dP')
+
+-- Save
+vim.keymap.set('n', '<C-s>', ':w<CR>')
+vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>')
+
+-- LSP actions
+vim.keymap.set('i', '<C-p>', ':lua vim.lsp.buf.hover()<CR>')
