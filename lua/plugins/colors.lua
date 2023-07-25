@@ -9,7 +9,6 @@ return {
 				flavour = "macchiato",
 			}
 			vim.cmd('colorscheme catppuccin')
-			vim.g.airline_theme = "catppuccin"
 		end,
 	},
 	{
@@ -19,7 +18,6 @@ return {
 		priority = 1000,
 		config = function()
 			vim.cmd('colorscheme onedark')
-			vim.g.airline_theme = "onedark"
 		end,
 	},
     {
