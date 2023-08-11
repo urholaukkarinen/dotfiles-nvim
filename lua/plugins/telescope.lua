@@ -4,6 +4,11 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 
 		config = function()
+            require("telescope").setup {
+                defaults = {
+                    file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%.out", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip"}
+                }
+            }
 			local default_opts = {noremap = true, silent = true}
 			local builtin = require('telescope.builtin')
 			vim.keymap.set('n', '<C-p>', ':Telescope find_files hidden=true<CR>', default_opts)
