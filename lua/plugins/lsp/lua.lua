@@ -1,5 +1,6 @@
 require 'lspconfig'.lua_ls.setup {
 	cmd = { vim.fn.expand(vim.fn.stdpath('data') .. "/mason/packages/lua-language-server/bin/lua-language-server.exe") },
+	root_dir = require('lspconfig.util').root_pattern(".git"),
 
 	settings = {
 		Lua = {

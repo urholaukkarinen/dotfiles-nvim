@@ -1,4 +1,4 @@
-local M = {
+return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
@@ -9,9 +9,7 @@ local M = {
 		"saadparwaiz1/cmp_luasnip",
 		"L3MON4D3/LuaSnip",
 	},
-}
-
-M.config = function()
+	config = function()
 	local cmp = require("cmp")
 	vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
@@ -51,6 +49,5 @@ M.config = function()
 			{ name = "cmdline" },
 		}),
 	})
-end
-
-return M
+	end
+}

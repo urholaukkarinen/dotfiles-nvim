@@ -11,6 +11,7 @@ return {
 			vim.keymap.set('v', '<C-f>', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', default_opts)
 			vim.keymap.set('n', '<leader>b', builtin.buffers, default_opts)
 			vim.keymap.set('n', '<leader>h', builtin.help_tags, default_opts)
+			vim.keymap.set('n', '<leader>no', ':Telescope notify', default_opts)
 		end,
 	},
 }

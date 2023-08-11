@@ -22,6 +22,7 @@ vim.opt.list = true
 vim.opt.signcolumn = "yes"
 
 require("bootstrap")
+require("filetypes")
 
 vim.cmd [[
 augroup InitAutoCmd
@@ -38,8 +39,8 @@ vim.keymap.set('n', '<leader>r', '"zyiw:%s/<c-r>z//g<Left><Left>')
 vim.keymap.set('v', 'p', '"_dP')
 
 -- Save
-vim.keymap.set('n', '<C-s>', ':w<CR>')
-vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>')
+vim.keymap.set('n', '<C-s>', ':w<CR>', { silent = true })
+vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>', { silent = true })
 
 -- LSP actions
 vim.keymap.set('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
