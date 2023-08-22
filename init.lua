@@ -47,7 +47,17 @@ vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>', { silent = true })
 
 -- LSP actions
 vim.keymap.set('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
-vim.keymap.set('n', '<leader>df', ':lua vim.lsp.buf.definition()<CR>')
 vim.keymap.set('n', '<leader>h', ':lua vim.lsp.buf.hover()<CR>')
-vim.keymap.set('n', '<leader>dl', ':lua vim.lsp.buf.declaration()<CR>')
 vim.keymap.set('i', '<leader> ', '<c-o>:lua vim.lsp.buf.completion()<CR>')
+vim.keymap.set('n', '<leader>df', ':Telescope lsp_definitions<CR>')
+vim.keymap.set('n', '<leader>dl', ':Telescope lsp_declarations<CR>')
+vim.keymap.set('n', '<leader>rf', ':Telescope lsp_references<CR>')
+vim.keymap.set('n', '<leader>ws', ':Telescope lsp_dynamic_workspace_symbols<CR>')
+vim.keymap.set('n', '<leader>ds', ':Telescope lsp_document_symbols<CR>')
+vim.keymap.set('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
+
+vim.keymap.set('n', '<leader>db', ':bd<CR>') -- delete buffer
+
+-- Highlights
+vim.cmd('highlight Normal guibg=none')
+vim.cmd('highlight NonText guibg=none')

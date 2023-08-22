@@ -26,7 +26,7 @@ return {
 				'python',
 			},
 			ignore_install = { '' },
-			auto_install = true,
+			auto_install = false,
 			matchup = { enable = true },
 			highlight = { enable = true },
 			incremental_selection = {
