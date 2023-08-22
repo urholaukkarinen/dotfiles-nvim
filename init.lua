@@ -30,10 +30,13 @@ augroup InitAutoCmd
     autocmd BufWritePre * lua vim.lsp.buf.format()
 augroup END
 ]]
+vim.keymap.set('n', '<ESC>', ':noh<CR>')
 
 -- Search & Replace
-vim.keymap.set('v', '<leader>r', '"zy:%s/<c-r>z//g<Left><Left>')
-vim.keymap.set('n', '<leader>r', '"zyiw:%s/<c-r>z//g<Left><Left>')
+vim.keymap.set('v', '<leader>re', '"zy:%s/<c-r>z//g<Left><Left>')
+vim.keymap.set('n', '<leader>re', '"zyiw:%s/<c-r>z//g<Left><Left>')
+
+vim.keymap.set('v', '<leader>rp', '"zy/<c-r>z<CR><S-n>cgn')
 
 -- Yank changes
 vim.keymap.set('v', 'p', '"_dP')

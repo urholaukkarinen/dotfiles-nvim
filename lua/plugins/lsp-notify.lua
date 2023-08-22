@@ -4,7 +4,5 @@ return {
 		"rcarriga/nvim-notify",
 	},
 
-  	config = function()
-    	require('lsp-notify').setup()
-  	end,
+	opts = {},
 }
