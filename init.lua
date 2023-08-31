@@ -58,6 +58,18 @@ vim.keymap.set('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
 
 vim.keymap.set('n', '<leader>db', ':bd<CR>') -- delete buffer
 
+function next_diag_action()
+	local diag = vim.diagnostic.get_next()
+	if diag == nil then
+		return
+	end
+
+	vim.diagnostic.goto_next()
+	vim.lsp.buf.code_action()
+end
+
+vim.keymap.set('n', '<leader>fx', ':lua next_diag_action()<CR>')
+
 -- Highlights
 vim.cmd('highlight Normal guibg=none')
 vim.cmd('highlight NonText guibg=none')
