@@ -19,6 +19,8 @@ vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.list = true
 
+vim.opt.ignorecase = true
+
 vim.opt.signcolumn = "yes"
 
 require("bootstrap")
@@ -36,7 +38,7 @@ vim.keymap.set('n', '<ESC>', ':noh<CR>')
 vim.keymap.set('v', '<leader>re', '"zy:%s/<c-r>z//g<Left><Left>')
 vim.keymap.set('n', '<leader>re', '"zyiw:%s/<c-r>z//g<Left><Left>')
 
-vim.keymap.set('v', '<leader>rp', '"zy/<c-r>z<CR><S-n>cgn')
+vim.keymap.set('v', '<leader>rp', '"zy/\\V<c-r>z<CR><S-n>cgn')
 
 -- Yank changes
 vim.keymap.set('v', 'p', '"_dP')
